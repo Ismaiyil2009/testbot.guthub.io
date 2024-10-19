@@ -3,56 +3,93 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>My Simple Page</title>
+    <title>Vote Now</title>
     <link rel="stylesheet" href="styles.css">
 </head>
 <body>
     <div class="container">
-        <h1>Welcome to My Simple Page!</h1>
-        <p>This is a simple page created with HTML and CSS.</p>
-        <button>Click Me!</button>
+        <h1>Vote for Your Favorite Option</h1>
+        <div id="voting-section">
+            <p>Please enter your name to vote:</p>
+            <input type="text" id="name-input" placeholder="Enter your name">
+            <div class="options">
+                <button class="vote-button" data-option="Option 1">Option 1</button>
+                <button class="vote-button" data-option="Option 2">Option 2</button>
+            </div>
+        </div>
+        <div id="thank-you-message" style="display:none;">
+            <h2>Thank you for voting!</h2>
+            <p id="result-message"></p>
+        </div>
+        <div id="results-section" style="display:none;">
+            <h2>Results:</h2>
+            <ul id="results-list"></ul>
+        </div>
     </div>
+
+    <script src="script.js"></script>
 </body>
 </html>
+
 
 <style>
     body {
         font-family: Arial, sans-serif;
-        background-color: #f0f0f0;
+        background-color: #f9f9f9;
         margin: 0;
         padding: 0;
     }
 
     .container {
         text-align: center;
-        padding: 50px;
-        margin: 100px auto;
+        margin: 50px auto;
+        padding: 40px;
         background-color: #fff;
-        width: 60%;
-        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
         border-radius: 10px;
+        box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+        width: 50%;
     }
 
     h1 {
         color: #333;
     }
 
-    p {
-        color: #666;
+    input[type="text"] {
+        padding: 10px;
+        width: 80%;
+        margin-bottom: 20px;
+        border: 1px solid #ccc;
+        border-radius: 5px;
     }
 
-    button {
+    .vote-button {
+        margin: 10px;
         padding: 10px 20px;
         font-size: 16px;
-        background-color: #28a745;
+        background-color: #007bff;
         color: white;
         border: none;
         border-radius: 5px;
         cursor: pointer;
-        transition: background-color 0.3s ease;
     }
 
-    button:hover {
-        background-color: #218838;
+    .vote-button:hover {
+        background-color: #0056b3;
+    }
+
+    #thank-you-message h2 {
+        color: #28a745;
+    }
+
+    #results-list {
+        list-style-type: none;
+        padding: 0;
+    }
+
+    #results-list li {
+        background-color: #f1f1f1;
+        margin: 10px 0;
+        padding: 10px;
+        border-radius: 5px;
     }
 </style>
